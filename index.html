@@ -3,56 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منصة عرض الأعمال | Video Portfolio</title>
+    <title>My Creative Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <header>
-        <nav>
-            <div class="logo">CREATIVE<span>PORTFOLIO</span></div>
-        </nav>
-        <div class="hero">
-            <h1>سيرتك الذاتية.. بصوتك وشغلك</h1>
-            <p>منصة لعرض نماذج الأعمال بالفيديو بشكل احترافي</p>
+    <nav class="sidebar">
+        <div class="logo">
+            <i class="fas fa-circle-notch"></i>
         </div>
-    </header>
+        <ul class="nav-links">
+            <li class="active"><i class="fas fa-home"></i> <span>الرئيسية</span></li>
+            <li><i class="fas fa-video"></i> <span>أعمالي</span></li>
+            <li onclick="toggleCV()"><i class="fas fa-file-pdf"></i> <span>السي في</span></li>
+            <li><i class="fas fa-cog"></i> <span>الإعدادات</span></li>
+        </ul>
+    </nav>
 
-    <main class="container">
-        <div class="portfolio-grid">
-            <div class="card" onclick="showCV('أحمد خالد', 'مصمم موشن جرافيك', 'خبرة 4 سنوات في تحريك الشعارات والفيديوهات الإعلانية.')">
-                <div class="video-placeholder">
-                    <div class="overlay"><span>إظهار التفاصيل</span></div>
-                    <img src="https://via.placeholder.com/400x250/1e293b/ffffff?text=Video+Preview" alt="Work">
-                </div>
-                <div class="card-body">
-                    <h3>أحمد خالد</h3>
-                    <p>Motion Designer</p>
-                </div>
-            </div>
+    <main class="main-content">
+        <div class="glass-screen">
+            <header class="screen-header">
+                <h2>معرض أعمالي المتنقل</h2>
+                <div class="status-bar">Saturday, Feb 7 | 12:11 PM</div>
+            </header>
 
-            <div class="card" onclick="showCV('سارة علي', 'مخرجة أفلام قصيرة', 'متخصصة في صناعة المحتوى البصري للشركات الناشئة.')">
-                <div class="video-placeholder">
-                    <div class="overlay"><span>إظهار التفاصيل</span></div>
-                    <img src="https://via.placeholder.com/400x250/1e293b/ffffff?text=Video+Preview" alt="Work">
+            <div class="video-grid">
+                <div class="video-item" onclick="playVideo('video1.mp4')">
+                    <div class="play-btn"><i class="fas fa-play"></i></div>
+                    <img src="https://via.placeholder.com/300x200/1e293b/fff?text=Project+1" alt="Work">
                 </div>
-                <div class="card-body">
-                    <h3>سارة علي</h3>
-                    <p>Film Director</p>
+                <div class="video-item">
+                    <div class="play-btn"><i class="fas fa-play"></i></div>
+                    <img src="https://via.placeholder.com/300x200/1e293b/fff?text=Project+2" alt="Work">
+                </div>
+                <div class="video-item">
+                    <div class="play-btn"><i class="fas fa-play"></i></div>
+                    <img src="https://via.placeholder.com/300x200/1e293b/fff?text=Project+3" alt="Work">
                 </div>
             </div>
         </div>
     </main>
 
-    <div id="cvModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <div id="modalData">
-                </div>
+    <div id="cvOverlay" class="cv-overlay">
+        <div class="cv-card">
+            <span class="close" onclick="toggleCV()">&times;</span>
+            <h2>السيرة الذاتية</h2>
+            <p>هنا تضع خبراتك، مهاراتك، وروابط التحميل...</p>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-
